@@ -158,7 +158,11 @@
                     </div>
 
                     <div class="px-5 py-4 space-y-3 text-sm">
-                        
+                        <a href="{{ route('users.index') }}"
+                           class="flex items-center justify-between px-4 py-2.5 transition-colors border rounded-md border-gray-200 hover:border-slate-900 hover:bg-slate-50">
+                            <span class="font-medium text-gray-800">Usuarios</span>
+                            <span class="text-xs text-gray-500">Ver listado</span>
+                        </a>
 
                         <a href="{{ route('event-orders.index') }}"
                            class="flex items-center justify-between px-4 py-2.5 transition-colors border rounded-md border-gray-200 hover:border-slate-900 hover:bg-slate-50">
