@@ -1,0 +1,22 @@
+<?php
+
+// database/migrations/xxxx_xx_xx_xxxxxx_add_activo_to_users_table.php
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration {
+    public function up(): void {
+        Schema::table('users', function (Blueprint $t) {
+            $t->boolean('activo')->default(true)->after('remember_token');
+            $t->index(['name','email']);
+        });
+    }
+    public function down(): void {
+        Schema::table('users', function (Blueprint $t) {
+            $t->dropIndex(['users_name_email_index']);
+            $t->dropColumn('activo');
+        });
+    }
+};
+
